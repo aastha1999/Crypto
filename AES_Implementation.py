@@ -44,6 +44,8 @@ s2 = np.array([0x1a,0xea,0x88,0xfb,
      0x66,0xb6,0x2e,0xaa,
      0x62,0x34,0x0c,0x40])
 
+s1xs2=[0]*16
+
 def print_states(s1,s2):
     print("State 1")
     print(tabulate(s1.reshape(4,4),tablefmt='fancy_grid'))
@@ -53,7 +55,6 @@ def print_states(s1,s2):
     print("\n")
 
 def print_matrix_xor(s1xs2,s1,s2):
-    s1xs2=[0]*16
     for i in range(16):
         s1xs2=s1^s2
     print(tabulate(s1xs2.reshape(4,4),tablefmt='fancy_grid'))
